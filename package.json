@@ -1,5 +1,9 @@
 {
   "devDependencies": {
-    "cssnano": "^4.1.10"
+    "cssnano": "^5.0.7",
+    "postcss": "^8.2.15"
+  },
+  "dependencies": {
+    "parcel": "^2.0.0-rc.0"
   }
 }
