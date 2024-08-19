@@ -1,448 +1,283 @@
 <!DOCTYPE html>
 <html lang="zh">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-    <title>我的简历</title>
-    <style>* {
-        box-sizing: border-box;
-      }
 
-      body {
-        background: #eee;
-        margin: 20px 0;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>我的简历</title>
+  <style>* {
+  box-sizing: border-box;
+}
 
-      article {
-        width: 21cm;
-        min-height: 29.7cm;
-        background: white;
-        margin: 0 auto;
-        overflow: auto;
-        padding: 1em;
-      }</style>
-    <style media="print">body {
-        margin: 0;
-      }
+body {
+  background: #eee;
+  margin: 20px 0;
+}
 
-      .page2 {
-        page-break-before: always;
-        margin-top: 30px;
-      }</style>
-    <style>body {
-      }
+article {
+  background: #fff;
+  width: 21cm;
+  min-height: 29.7cm;
+  margin: 0 auto;
+  padding: 2em;
+  overflow: auto;
+}
+</style>
+  <style media="print">body {
+  margin: 0;
+}
 
-      p {
-        margin: 0.3em 0;
-      }
+.page2 {
+  page-break-before: always;
+  margin-top: 30px;
+}
+</style>
+  <style>p {
+  margin: .3em 0;
+}
 
-      h1 {
-        font-size: 25px;
-        margin-top: 0;
-      }
+h1 {
+  margin-top: 0;
+  font-size: 25px;
+}
 
-      h4,
-      h5,
-      h6 {
-        font-weight: normal;
-      }
+h4, h5, h6 {
+  font-weight: normal;
+}
 
-      ol,
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-      strong {
-        font-weight: normal;
-        color: #d34350;
-      }
+strong {
+  color: #d34350;
+  font-weight: normal;
+}
 
-      a {
-        color: #999;
-        text-decoration: none;
-        border-bottom: 1px solid;
-      }
+a {
+  color: #999;
+  border-bottom: 1px solid;
+  text-decoration: none;
+}
 
-      p,
-      li {
-        color: #666;
-      }
+p, li {
+  color: #666;
+}
 
-      strong {
-        font-weight: normal;
-      }
+strong {
+  font-weight: normal;
+}
 
-      h3,
-      h4,
-      h5,
-      h6 {
-        margin: 0;
-      }
+h3, h4, h5, h6 {
+  margin: 0;
+}
 
-      .bio {
-        position: relative;
-      }
+.bio {
+  position: relative;
+}
 
-      .bio img {
-        position: absolute;
-        top: 0;
-        right: 0;
-      }</style>
-    <style>.projects {
-      }
+.bio img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+</style>
+  <style>.projects p {
+  color: #666;
+}
 
-      .projects p {
-        color: #666;
-      }
+.projects strong {
+  color: #d34350;
+}
 
-      .projects strong {
-        color: #d34350;
-      }
+.projects > ol {
+  margin-top: 0;
+  padding: 0;
+  list-style-position: inside;
+}
 
-      .projects > ol {
-        margin-top: 0;
-        list-style-position: inside;
-        padding: 0;
-      }
+.projects > ol > li {
+  margin-bottom: 24px;
+}
 
-      .projects > ol > li {
-        margin-bottom: 24px;
-      }
+.projects > ol > li > header {
+  justify-content: space-between;
+  display: flex;
+}
 
-      .projects > ol > li > header {
-        display: flex;
-        justify-content: space-between;
-      }
+.projects > ol > li h3 {
+  display: inline-block;
+}
+</style>
+  <style>@media print {
+  #skills {
+    display: none;
+  }
+}
 
-      .projects > ol > li h3 {
-        display: inline-block;
-      }</style>
-    <style>.skills {
-      }
+.skills > .wrapper {
+  justify-content: space-between;
+  display: flex;
+}
 
-      #skills {
-        width: 500px;
-        height: 270px;
-      }
+.skills > .wrapper > :first-child {
+  margin-right: 24px;
+}
 
-      @media print {
-        #skills {
-          display: none;
-        }
-      }
+.skills > .wrapper > ul {
+  color: #666;
+}
 
-      .skills > .wrapper {
-        display: flex;
-        justify-content: space-between;
-      }
+.skills > .wrapper strong {
+  color: #d34350;
+}
 
-      .skills > .wrapper > :first-child {
-        margin-right: 24px;
-      }
+.skills > .wrapper > ul > li {
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+</style>
+  <style>.openSource header img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
-      .skills > .wrapper > #skills {
-      }
+.openSource > ul > li {
+  margin-bottom: 24px;
+}
 
-      .skills > .wrapper > ul {
-        color: #666;
-      }
+.openSource header {
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+}
+</style>
+  <style>.jobs > ol > li {
+  margin: 12px 0;
+}
 
-      .skills > .wrapper strong {
-        color: #d34350;
-      }
+.jobs header {
+  color: #666;
+  margin-bottom: 12px;
+  display: flex;
+}
 
-      .skills > .wrapper > ul > li {
-        line-height: 1.2;
-        margin-bottom: 8px;
-      }</style>
-    <style>.openSource {
-      }
+.jobs header > h3 {
+  color: #333;
+  font-size: 18px;
+}
 
-      .openSource > h2 {
-      }
+.jobs header > h4 {
+  margin-left: 1em;
+  font-size: 18px;
+}
 
-      .openSource header img {
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
+.jobs header > span {
+  margin-left: auto;
+  font-size: 18px;
+}
+</style>
+  <style>@media (width <= 500px) {
+  body {
+    margin: 0;
+  }
 
-      .openSource > ul {
-      }
+  article {
+    width: auto;
+    height: auto;
+  }
 
-      .openSource > ul > li {
-        margin-bottom: 24px;
-      }
+  .bio img {
+    display: none;
+  }
 
-      .openSource header {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-      }
+  .skills .wrapper {
+    flex-direction: column;
+  }
 
-      .openSource h3 {
-      }</style>
-    <style>.jobs {
-      }
+  #skills {
+    width: auto;
+  }
 
-      .jobs > h2 {
-      }
+  .jobs header {
+    flex-direction: column;
+  }
 
-      .jobs > ol {
-      }
+  .jobs header > h3, .jobs header > h4, .jobs header > span {
+    margin: 0;
+  }
+}
+</style>
+</head>
 
-      .jobs > ol > li {
-        margin: 12px 0;
-      }
+<body>
+  <article>
+    <section class="bio">
+      <h1>沈鑫</h1>
+      <p>男 | 26岁 | 前端开发工程师 | 学历：本科</p>
+      <p>手机：18840102768 | 微信：bot_ab | 邮箱：botshen@foxmail.com</p>
+    </section>
+    <section class="skills">
+      <h2>技能</h2>
+      <div class="wrapper"> <ul> <li>1. 精通<strong>HTML5</strong>语义化标签，构建结构清晰的页面</li> <li>2. 熟练运用<strong>CSS</strong>/<strong>SCSS</strong>，深谙<strong>文档流</strong>、<strong>盒模型</strong>原理，精通<strong>flex</strong>/<strong>grid</strong>布局及<strong>Tailwind CSS</strong></li> <li>3. 精通<strong>JavaScript</strong>及<strong>ES6+</strong>特性，熟练掌握<strong>DOM</strong>操作、<strong>Ajax</strong>、<strong>跨域</strong>技术，深入理解<strong>闭包</strong>、<strong>原型链</strong>、<strong>this</strong>指向和<strong>Promise</strong>异步编程</li> <li>4. 精通<strong>Vue2</strong>/<strong>Vue3</strong>生态系统，包括<strong>Vuex</strong>/<strong>Pinia</strong>状态管理、<strong>Vue Router</strong>路由管理和<strong>Element Plus</strong>UI框架</li> <li>5. 精通<strong>React</strong>技术栈，熟练使用<strong>React Router</strong>、<strong>Ant Design</strong>、<strong>Zustand</strong>状态管理和<strong>Hooks API</strong></li> <li>6. 熟悉前端工程化工具，如<strong>Webpack</strong>、<strong>Vite</strong>配置，以及<strong>npm</strong>、<strong>pnpm</strong>、<strong>yarn</strong>包管理工具</li> <li>7. 精通<strong>Git</strong>版本控制，熟练使用<strong>GitHub</strong>/<strong>GitLab</strong>协作流程，快速融入团队开发</li> <li>8. 具备<strong>Chrome扩展</strong>开发经验，熟练使用<strong>Plasmo</strong>、<strong>WXT</strong>框架，作品已成功上架Google扩展商店</li> <li>9. 掌握全栈开发技术，熟练运用<strong>Next.js</strong>、<strong>Node.js</strong>、<strong>tRPC</strong>、<strong>Prisma</strong>、<strong>NextAuth.js</strong>、<strong>TypeScript</strong>和<strong>Docker</strong></li> <li>10. 具备使用<strong>Ruby on Rails</strong>、<strong>Vue3</strong>、<strong>TSX</strong>和<strong>Docker</strong>进行全栈项目开发的实战经验</li> <li>11. 擅长根据业务需求设计和开发可复用的业务组件和UI组件，能够高效地进行第三方组件库的二次封装</li> <li>12. 对新技术保持高度热情，善于利用<strong>Google</strong>、<strong>Stack Overflow</strong>、<strong>ChatGPT</strong>、<strong>GitHub Issues</strong>等资源解决问题，并借助AI翻译工具阅读英文技术文档和视频资料</li> </ul> </div>
+    </section>
+    <section class="projects">
+      <h2>项目经历</h2>
+      <ol>
+        <section class="openSource">   <ul> <li class="page2"> <header> <h3>Mock Serverify - 高效的浏览器扩展Mock</h3> <span> <a href="https://github.com/botshen/mock-serverify" target="_blank" rel="noopener noreferrer">源码链接</a> <a href="https://chromewebstore.google.com/detail/mock-serverify/jehlilcnkgeiaedaancpfkhccljlebdm" target="_blank" rel="noopener noreferrer">项目预览</a> </span> </header> <p> Mock Serverify 是一个功能强大的浏览器扩展，旨在简化前端开发中的 API 模拟过程。这个项目展示了我在<strong>浏览器扩展开发</strong>、<strong>前端工程化</strong>和<strong>现代 JavaScript 框架</strong>方面的专业技能。 </p> <ul> <li>使用 <strong>Plasmo 框架</strong>开发，支持 Chrome 和 Firefox 浏览器，展示了跨浏览器兼容性的处理能力</li> <li>集成 <strong>React</strong> 和 <strong>Chakra UI</strong>，构建了直观且美观的用户界面</li> <li>应用 <strong>Zustand</strong> 进行状态管理，体现了对现代状态管理方案的深入理解</li> <li>实现了 <strong>ajax-hook</strong> 来拦截和模拟 API 请求，展示了对网络通信的深入掌握</li> <li>使用 <strong>TypeScript</strong> 开发，提高了代码的可维护性和可靠性</li> <li>集成 <strong>Tailwind CSS</strong>，实现了响应式设计和快速样式开发</li> <li>采用 <strong>Prettier</strong> 和自定义的导入排序插件，保证了代码风格的一致性</li> <li>通过 <strong>web-ext</strong> 工具简化了扩展的测试和打包流程</li> </ul> <p> 这个项目展示了我在前端开发方面的全面技能，体现了我对开发工具链和最佳实践的深入理解。通过开发这个浏览器扩展，我提升了在复杂 JavaScript 应用开发中的问题解决能力和架构设计能力。 </p> </li> </ul> </section>
+        <li>
+          <header>
+            <h3><strong>Web3</strong>付费文章社区平台</h3>
+          </header>
+          开发了一个基于<strong>Web3</strong>技术的付费文章社区平台,旨在为作者和读者提供一个<strong>去中心化</strong>的内容创作和分享环境。该项目融合了<strong>区块链技术</strong>与传统web开发,实现了以下主要功能：
+          <br>
 
-      .jobs header {
-        display: flex;
-        color: #666;
-        margin-bottom: 12px;
-      }
+          用户认证：集成了<strong>@privy-io/react-auth</strong>和<strong>next-auth</strong>,实现了<strong>Web3钱包登录</strong>和<strong>传统邮箱登录</strong>的双重认证机制。
+          <br>
 
-      .jobs header > h3 {
-        font-size: 18px;
-        color: #333;
-      }
+          内容管理：使用<strong>React</strong>和<strong>Next.js</strong>构建了高性能的前端界面,支持<strong>Markdown</strong>格式的文章编辑和展示（<strong>react-simplemde-editor</strong>,
+          <strong>react-markdown</strong>）。
+          <br>
 
-      .jobs header > h4 {
-        margin-left: 1em;
-        font-size: 18px;
-      }
+          支付系统：集成了<strong>wagmi</strong>和<strong>viem</strong>库,实现了基于<strong>以太坊</strong>的<strong>加密货币支付</strong>功能,为优质内容定价和交易提供支持。
+          <br>
 
-      .jobs header > span {
-        font-size: 18px;
-        margin-left: auto;
-      }</style>
-    <style>@media (max-width: 500px) {
-        body {
-          margin: 0;
-        }
+          数据存储：使用<strong>Prisma ORM</strong>和<strong>PostgreSQL</strong>数据库,确保了数据的安全存储和高效查询。
+          <br>
 
-        article {
-          width: auto;
-          height: auto;
-        }
+          用户体验：采用<strong>Tailwind CSS</strong>和<strong>Radix UI</strong>组件库,打造了现代化、响应式的用户界面。
+          <br>
 
-        .bio img {
-          display: none;
-        }
+          性能优化：通过<strong>React
+            Query</strong>（<strong>@tanstack/react-query</strong>）实现了高效的数据获取和缓存策略,并使用<strong>react-infinite-scroll-component</strong>支持无限滚动加载。
+          <br>
 
-        .skills .wrapper {
-          flex-direction: column;
-        }
+          API开发：使用<strong>tRPC</strong>构建了类型安全的API,提高了前后端协作效率和代码质量。
+          <br>
+        </li>
+      </ol>
+    </section>
 
-        #skills {
-          width: auto;
-        }
+    <section class="openSource"> <h2>开源项目</h2> <ul> <li class="page2"> <header> <h3>CSS动画绘制：莫蒂卡通人物</h3> <span> <a href="https://github.com/botshen/Morty" target="_blank" rel="noopener noreferrer">源码链接</a> <a href="https://botshen.github.io/Morty/dist/test.html" target="_blank" rel="noopener noreferrer">项目预览</a> </span> </header> <p> 这是一个展示<strong>高级CSS3技巧</strong>和<strong>动画能力</strong>的创意项目，通过纯CSS实现了动画卡通人物莫蒂的绘制。 </p> <ul> <li>运用<strong>复杂的CSS选择器</strong>和<strong>伪元素</strong>精确构建人物细节</li> <li>利用<strong>CSS动画</strong>和<strong>变换</strong>实现生动的角色表现</li> <li>巧妙运用<strong>绝对定位</strong>和<strong>相对定位</strong>技术，精确控制每个元素的位置</li> <li>使用<strong>Parcel</strong>作为构建工具，优化开发流程和打包效率</li> <li>通过<strong>模块化JavaScript</strong>实现动画控制，展示了前端工程化实践</li> </ul>  </li> </ul> </section>
 
-        .jobs header {
-          flex-direction: column;
-        }
+    <section class="jobs"> <h2>工作经历</h2> <ol> <li> <header> <h3>北京畅哲科技有限公司</h3> <h4>前端工程师</h4> <span><time>2019年9月</time>~<time>2021年2月</time></span> </header> <ul> <li>主导<strong>Vue</strong>项目的迭代维护和新功能开发，提升用户体验和系统性能</li> <li>独立负责模型等效外推展示项目的前端架构设计和开发实现</li> <li> 设计并实现了面向航天院的模型数据可视化系统，支持多种输入参数和文件格式，实现了高效的数据录入、复杂计算和动态图表展示功能 </li> <li> 核心技术栈：<strong>Vue.js, Vue Router, Vuex, SCSS, Element UI, Axios, ECharts</strong>，构建了响应式、高性能的单页面应用 </li> </ul> </li> <li> <header> <h3>纬创软件公司</h3> <h4>中级前端工程师</h4> <span><time>2021年2月</time>~<time>2022年11月</time></span> </header> <ul> <li>核心参与美团安全产品的<strong>Vue + TypeScript</strong>项目开发，负责关键模块的维护和功能扩展</li> <li> 深度参与"将军令"数据应用安全平台的开发，该平台为公司内部提供权限管理、数据流向追溯和风险识别等核心安全服务 </li> <li> 成功主导将审批模板和审批流程模块从React迁移至Vue技术栈，优化了系统架构，提高了开发效率和代码复用性 </li> <li>主导项目的目录结构重构，优化常量管理和类型定义，显著提升了代码可维护性和开发效率</li> <li> 核心技术栈：<strong>Vue.js, Vue Router, Vuex, TypeScript, JavaScript, Mtd-UI, Element UI, Axios, ES6+</strong>，构建了高性能、可扩展的企业级应用 </li> </ul> </li> <li> <header> <h3>中国邮政储蓄银行软件研发中心</h3> <h4>高级开发组长</h4> <span><time>2022年11月</time>~<time>至今</time></span> </header> <ul> <li> 领导并参与多个邮储银行核心后台管理系统的开发，采用<strong>Vue 3</strong>生态系统构建高效、可靠的企业级应用 </li> <li> 设计并实现基于<strong>Pinia</strong>的状态管理方案，优化数据流，提高应用性能和可维护性 </li> <li> 主导开发基于<strong>Element Plus</strong>的自定义UI组件库，提高团队开发效率，确保界面设计的一致性 </li> <li> 利用<strong>IndexedDB (IDB)</strong>实现复杂的客户端数据持久化方案，显著提升离线功能和应用响应速度 </li> <li> 整合<strong>AntV X6</strong>图形引擎，开发高度交互的可视化流程设计工具，增强用户体验 </li> <li> 优化<strong>vxe-table</strong>的应用，实现高性能的大数据表格展示和操作功能 </li> <li> 建立并执行严格的代码审查流程，确保代码质量，指导团队成员解决技术难点 </li> <li> 核心技术栈：<strong>Vue 3, Pinia, Vue Router, Element Plus, IndexedDB, AntV X6, vxe-table, TypeScript</strong>，打造了一套完整的现代化前端开发体系 </li> </ul> </li> </ol> </section>
+ 
 
-        .jobs header > h3,
-        .jobs header > h4,
-        .jobs header > span {
-          margin: 0;
-        }
-      }</style>
-  </head>
+    <section class="others"> 
+      <ul>
+        <li style="font-size: 20px">
+          <a href="https://fastidious-meerkat-ec68b5.netlify.app/">我的博客</a>
+        </li>
+      </ul>
+    </section>
 
-  <body>
-    <article>
-      <section class="bio">
-        <h1>沈鑫</h1>
-        <p>男 | 25岁 | 前端开发工程师 | 北京</p>
-        <p>手机：18840102768 | 微信：bot_ab | 邮箱：botshen@foxmail.com</p>
-      </section>
-      <section class="projects">
-        <h2>项目经历</h2>
-        <ol>
-          <li>
-            <header>
-              <h3>鑫UI-从零开始的 UI 组件库 - Vue</h3>
-              <span>
-                <a href="https://github.com/botshen/gulu-Demo">源码链接</a>
-                <a href="https://botshen.github.io/gulu-Demo-website/">项目预览</a>
-              </span>
-            </header>
-            <p>
-              给日常前端开发中常用的组件封装起来，
-              实现的组件：按钮，标签，输入框，网格布局，布局，<br>手风琴，消息弹窗，
-              弹出层
-            </p>
-            <p>
-              所有组件使用 <strong>Vue</strong> +
-              <strong>TypeScript</strong> 装饰器来实现，有更好的类型支持
-            </p>
-            <p>组件里使用了本人实现的 Vue 插件， 使组件库功能更强大</p>
-            <p>
-              统一打包，<strong>单元测试</strong>，<strong>持续集成</strong>，发布<strong>
-                npm </strong>，流程化 <br>具体思路见<a href="https://fastidious-meerkat-ec68b5.netlify.app/docs/%E9%A1%B9%E7%9B%AE/%E9%80%A0%E8%BD%AE%E5%AD%90Vue2/%E9%91%ABUI-%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><strong>我的博客</strong></a>
-            </p>
-          </li>
-          <li>
-            <header>
-              <h3>金多多记账-React</h3>
-              <span>
-                <a href="https://github.com/botshen/morney-2">源码链接</a>
-                <a href="https://botshen.github.io/morney-2-website/#/money">项目预览</a>
-              </span>
-            </header>
-            <p>
-              基于 <strong>React</strong> / <strong>React Route</strong>r /
-              自定义 <strong>Hooks</strong> / <strong>webpack</strong> /
-              <strong>TypeScript</strong> /
-              <strong>LocalStorage</strong> 实现的极简主义记账应用
-            </p>
-            <p>
-              特点是一键极速记账，这是我为了满足朋友的需求而独立开发的一款应用。
-            </p>
-            <p>
-              该项目使我对 <strong>webpack</strong> 和
-              <strong>Hooks API</strong>、<strong>SVG</strong>
-              <strong>Icon</strong> 有了基本的理解
-            </p>
-          </li>
-        </ol>
-      </section>
-      <section class="skills">
-        <h2>技能</h2>
-        <div class="wrapper">
-          <div id="skills"></div>
-          <ul>
-            <li>能够使用HTML5标签编写<strong>语义化</strong>的页面</li>
-            <li>
-              熟练使用<strong>CSS</strong>/<strong>SCSS</strong>，
-              <strong>文档流</strong>， <strong>盒模型</strong>，
-              <strong>flex</strong>/<strong>grid</strong> <br>布局定位
-            </li>
-            <li>
-              掌握<strong>JavaScript</strong>， <strong>ES6</strong>语法，
-              <strong>DOM</strong>操作， <strong>Ajax</strong>，
-              <strong>JSONP</strong>， <strong>跨域</strong>，
-              <strong>闭包</strong>， <strong>原型链</strong>，
-              <strong>this</strong>，
-              <strong>Promise</strong>，<strong>TypeScript</strong>的使用
-            </li>
-            <li>
-              掌握
-              <strong>Vue</strong>/<strong>Vuex</strong>/<strong>Vue-router</strong>的使用
-            </li>
-            <li>
-              掌握 <strong>react-redux</strong>/ <strong>React-Router</strong>/
-              <strong>Hooks</strong> API 的使用
-            </li>
-            <li>
-              了解<strong>Webpack</strong>配置，
-              <strong>npm</strong>，<strong>yarn</strong>工具使用
-            </li>
-            <li>
-              掌握<strong>Git</strong>/<strong>GitHub</strong>工作部署流程
-            </li>
-          </ul>
-        </div>
-      </section>
-      <section class="openSource">
-        <h2>开源项目</h2>
-        <ul>
-          <li class="page2">
-            <header>
-              <h3>纯CSS绘制莫蒂卡通人物</h3>
-              <span>
-                <a href="https://github.com/botshen/Morty">源码链接</a>
-                <a href="https://botshen.github.io/Morty/dist/test.html">项目预览</a>
-              </span>
-            </header>
-            <p>
-              这是我在学习 <strong>CSS3</strong>和<strong>动画</strong>
-              时制作的一个可爱作品
-            </p>
-            <p>大量使用了伪元素，CSS Animation,绝对，相对定位</p>
-          </li>
-        </ul>
-      </section>
 
-      <section class="jobs">
-        <h2>工作经历</h2>
-        <ol>
-          <li>
-            <header>
-              <h3>北京道迩科技有限公司</h3>
-              <h4>研发工程师</h4>
-              <span><time>2019年11月</time>~<time>2021年9月</time></span>
-            </header>
-            <ul>
-              <li>参与 WPF 项目 和 <strong>vue</strong> 项目的维护和新功能开发</li>
-              <li>配合测试人员进行缺陷修复等页面样式的修复</li>
-            </ul>
-          </li>
-          <li>
-            <header>
-              <h3>北京畅哲科技有限公司</h3>
-              <h4>web 前端工程师</h4>
-              <span><time>2021年9月</time>~<time>2022年2月</time></span>
-            </header>
-            <ul>
-              <li>参与 <strong>vue</strong> 项目的维护和新功能开发</li>
-              <li>负责模型等效外推展示项目的前端开发</li>
-              <li>
-                模型等效外推展示是面向航天院的模型数据展示效果图的演示和分析项目，通过输入模型的多种输入参数或文件参数，实现了数据录入，计算输出数据图表展示等主要功能
-              </li>
-              <li>
-                技术栈：<strong>vue,vue-router,vuex,scss,element-ui,axios,Echarts,</strong>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <header>
-              <h3>纬创软件公司</h3>
-              <h4>中级前端工程师</h4>
-              <span><time>2022年3月</time>~<time>至今</time></span>
-            </header>
-            <ul>
-              <li>参与 美团安全产品 vue + TS 项目的维护和新功能开发</li>
-              <li>
-                将军令是公司内统一的数据应用安全平台，面向公司内数据产品提供权限管理、数据流向追溯/风险发现等服务，为数据应用安全保驾护航
-              </li>
-              <li>
-                负责审批模板和审批流程 React 技术栈的老模块的迁移到 Vue
-                技术栈，熟悉树组件的常用api
-              </li>
-              <li>负责项目整体目录结构迁移，常量和类型相关内容迁移</li>
-              <li>
-                使用的技术栈：<strong>vue,vue-router,vuex,JavaScript,TypeScript,Mtd-UI,element-ui,axios,ES6</strong>
-              </li>
-            </ul>
-          </li>
-        </ol>
-      </section>
+  </article>
+  <script src="https://cdn.bootcss.com/echarts/4.6.0/echarts.min.js"></script>
+  <script src="/index.de158e3a.js"></script>
+<script src="/cv-2022.59712999.js"></script></body>
 
-      <section class="others">
-        <h2>其他链接</h2>
-        <ul>
-          <li>
-            <a href="https://fastidious-meerkat-ec68b5.netlify.app/">我的博客</a>
-          </li>
-        </ul>
-      </section>
-
-      <section class="education">
-        <h2>教育经历</h2>
-        <p>
-          <span><time>2015年</time>~<time>2018年</time></span>
-          辽宁铁道职业技术学院 通信技术
-        </p>
-        <p>
-          <span><time>2018年</time>~<time>2021年</time></span>
-          北京交通大学 通信工程
-        </p>
-      </section>
-    </article>
-    <script src="https://cdn.bootcss.com/echarts/4.6.0/echarts.min.js"></script>
-    <script src="/main.1f19ae8e.js"></script>
-  </body>
 </html>
